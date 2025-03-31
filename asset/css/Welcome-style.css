@@ -106,4 +106,5 @@ main form button {
   border: none;
   font-weight: bold;
   font-size: 16px;
+  box-shadow: 0px 1px 43px #00ffff;
 }
