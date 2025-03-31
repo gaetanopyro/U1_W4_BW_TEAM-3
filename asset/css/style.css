@@ -64,3 +64,33 @@ main li {
 main li p {
   margin-bottom: 10px;
 }
+
+main form {
+  margin-top: 60px;
+  font-family: "Outfit", sans-serif;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: 0;
+  vertical-align: middle;
+}
+
+main form p {
+  display: inline;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-right: 60px;
+  vertical-align: middle;
+}
+
+main form button {
+  margin-left: 60px;
+  padding: 15px 30px;
+  vertical-align: middle;
+}
