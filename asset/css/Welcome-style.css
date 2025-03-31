@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../img/bg.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 50px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+header img {
+  width: 150px;
+}
+
+main h1 {
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+main h3 {
+  color: #d20094;
+  font-family: "Outfit", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+main p {
+  color: white;
+  font-family: "inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+main li {
+  color: white;
+}
+main li p {
+  margin-bottom: 10px;
+}
+
+main form {
+  margin-top: 60px;
+  font-family: "Outfit", sans-serif;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: 0;
+  vertical-align: middle;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+input[type="checkbox"]:checked {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  appearance: checkbox;
+  content: "X";
+  cursor: pointer;
+  border: 2px solid black;
+  box-shadow: 0px 1px 43px #00ffff;
+}
+
+main form p {
+  display: inline;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-right: 60px;
+  vertical-align: middle;
+}
+
+main form button {
+  background-color: #00ffff;
+  width: 150px;
+  margin-left: 60px;
+  padding: 15px 30px;
+  vertical-align: middle;
+  color: black;
+  padding: 15px 30px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0px 1px 43px #00ffff;
+}
