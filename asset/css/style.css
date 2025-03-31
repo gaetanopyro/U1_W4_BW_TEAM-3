@@ -28,7 +28,7 @@ main section div {
   padding-top: 50px;
 }
 
-footer button {
+.button {
   margin-top: 5rem;
   text-align: center;
   background-color: transparent;
