@@ -11,7 +11,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
-  padding: 60px;
+  padding: 50px;
 }
 
 h1,
@@ -32,7 +32,7 @@ header {
 }
 
 header img {
-  width: 10%;
+  width: 150px;
 }
 
 main h1 {
@@ -41,6 +41,7 @@ main h1 {
   font-size: 60px;
   font-weight: 400;
   margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 main h3 {
@@ -71,11 +72,16 @@ main form {
 }
 
 input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 20px;
   height: 20px;
   margin-right: 10px;
   margin-left: 0;
   vertical-align: middle;
+  border: 2px solid white;
+  border-radius: 2px;
 }
 
 main form p {
@@ -90,7 +96,14 @@ main form p {
 }
 
 main form button {
+  background-color: #00ffff;
+  width: 150px;
   margin-left: 60px;
   padding: 15px 30px;
   vertical-align: middle;
+  color: black;
+  padding: 15px 30px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
 }
