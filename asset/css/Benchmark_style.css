@@ -19,6 +19,10 @@ main {
   margin-top: 80px;
   margin-bottom: 60px;
 }
+#countdown h3 {
+  text-align: right;
+  color: azure;
+}
 p {
   margin-top: 0;
   text-align: center;
