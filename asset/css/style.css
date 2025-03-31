@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
 *,
 *::before,
 *::after {
@@ -5,8 +7,11 @@
 }
 
 body {
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  padding: 60px;
 }
 
 h1,
@@ -14,7 +19,48 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+  margin-top: 0;
+}
+
 p {
   margin-top: 0;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+header img {
+  width: 10%;
+}
+
+main h1 {
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+main h3 {
+  color: #d20094;
+  font-family: "Outfit", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+main p {
+  color: white;
+  font-family: "inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+main li {
+  color: white;
+}
+main li p {
+  margin-bottom: 10px;
 }
