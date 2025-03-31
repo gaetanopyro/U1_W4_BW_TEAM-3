@@ -6,17 +6,31 @@
 }
 
 body {
-  margin: 0;
-  font-family: "Courier New", Courier, monospace;
-  background-image: url("bg.jpg");
+  margin: 30px;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+}
+img {
+  width: 200px;
+  height: auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 p {
   margin-top: 0;
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  color: white;
+  font-size: 60px;
+  display: block;
+}
+form {
+  padding-top: 20px;
+}
+button {
+  font-family: "Inter", sans-serif;
+  color: white;
+  border-radius: 50px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
