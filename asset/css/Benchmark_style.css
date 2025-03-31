@@ -6,13 +6,14 @@
 }
 
 body {
-  margin: 30px;
+  margin: 0px;
   background-image: url("../img/bg.jpg");
   background-size: cover;
 }
 img {
-  width: 200px;
-  height: auto;
+  width: 250px;
+  padding-top: 50px;
+  padding-left: 100px;
 }
 main {
   margin-top: 80px;
