@@ -111,6 +111,7 @@ const questions = [
   },
 ];
 window.onload = function () {
+  loadQuestion();
   // TIPS:
   // SE MOSTRI TUTTE LE RISPOSTE ASSIEME IN FORMATO LISTA:
   // Per ogni domanda, crea un container e incorporale tutte all'interno.
@@ -124,9 +125,70 @@ window.onload = function () {
   // Quando l'utente seleziona una risposta, passa alla domanda successiva dell'array e sostituisci quella precedentemente visualizzata con quella corrente,
   // salvando le risposte dell'utente in una variabile
 };
-
 // Come calcolare il risultato? Hai due strade:
 // Se stai mostrando tutte le domande nello stesso momento, controlla semplicemente se i radio button selezionati sono === correct_answer
 // Se stai mostrando una domanda alla volta, aggiungi semplicemente un punto alla variabile del punteggio che hai precedentemente creato SE la risposta selezionata è === correct_answer
 
 // BUON LAVORO 💪🚀
+/*
+const score = 0; //
+
+const questionIndex = document.getElementById("p");
+
+const index = function () {
+  if (questionNumber < questions.length) {
+    const currentQuestion = questions[questionNumber];
+    const userAnswer = prompt("Domanda " + (questionNumber + 1) + ": " + currentQuestion.question);
+    console.log(currentQuestion);
+  }
+};
+/*
+const score = 0;
+const index = (array) => {
+  return array.map((element) => element.question);
+};
+
+const questionIndex = document.getElementById("p");
+
+
+*/
+
+let score = 0;
+let questionNumber = 0;
+const totalQuestions = questions.length;
+
+function loadQuestion() {
+  if (questionNumber >= totalQuestions) {
+    document.getElementById("question").innerHTML = "Quiz terminato!";
+    document.getElementById("results").innerHTML = "Punteggio: " + score;
+    document.getElementById("options").innerHTML = "";
+    return;
+  }
+
+  let q = questions[questionNumber];
+
+  document.getElementById("question-header").innerHTML = "QUESTION " + (questionNumber + 1) + " <span>/" + totalQuestions + "</span>";
+
+  document.getElementById("question").innerHTML = q.question;
+
+  let answers = [...q.incorrect_answers, q.correct_answer];
+
+  let optionsContainer = document.getElementById("options");
+  optionsContainer.innerHTML = "";
+
+  answers.forEach((answer) => {
+    let btn = document.createElement("button");
+    btn.innerText = answer;
+    btn.classList.add("option-btn");
+    btn.onclick = () => checkAnswer(answer);
+    optionsContainer.appendChild(btn);
+  });
+}
+
+function checkAnswer(selectedAnswer) {
+  if (selectedAnswer === questions[questionNumber].correct_answer) {
+    score++;
+  }
+  questionNumber++;
+  loadQuestion();
+}
