@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+}
+img {
+  width: 250px;
+  padding-top: 50px;
+  padding-left: 100px;
+}
+main {
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+#countdown h3 {
+  text-align: right;
+  color: azure;
+}
+p {
+  margin-top: 0;
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  color: white;
+  font-size: 40px;
+  display: block;
+  margin: -10px;
+}
+#stringa2 {
+  margin-top: 0;
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  color: white;
+  font-size: 40px;
+  display: block;
+  margin: -10px;
+  font-weight: bolder;
+}
+form {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin-top: 50px;
+}
+.buttons {
+  text-align: center;
+}
+button {
+  font-family: "Inter", sans-serif;
+  color: white;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: -1px -2px 2px 1px rgb(255, 255, 255);
+  display: inline-block;
+  width: 250px;
+  height: 50px;
+  padding: 15px;
+  margin: 15px;
+}
+h1 {
+  color: white;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: smaller;
+}
+span {
+  color: #900080;
+  font-weight: bolder;
+}
