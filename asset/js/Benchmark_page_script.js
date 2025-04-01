@@ -160,8 +160,18 @@ const totalQuestions = questions.length;
 function loadQuestion() {
   if (questionNumber >= totalQuestions) {
     document.getElementById("question").innerHTML = "Quiz terminato!";
-    document.getElementById("results").innerHTML = "Punteggio: " + score;
+    //  document.getElementById("results").innerHTML = "Punteggio: " + score;
     document.getElementById("options").innerHTML = "";
+    let btn2 = document.getElementById("buttonss");
+    btn2 = document.createElement("button");
+    btn2.innerText = "Vai al risultato";
+    buttonss.appendChild(btn2);
+    btn2.classList.add("");
+    //
+    buttunss.createElement("a");
+    btn2.classList.add("prova");
+    window.location.href = "QUIZ-App_Requirements.html";
+
     return;
   }
 
