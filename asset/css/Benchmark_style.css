@@ -24,6 +24,7 @@ main {
   text-align: right;
   color: azure;
 }
+/*
 p {
   margin-top: 0;
   text-align: center;
@@ -43,12 +44,13 @@ p {
   margin: -10px;
   font-weight: bolder;
 }
+*/
 form {
   padding-top: 20px;
   padding-bottom: 40px;
   margin-top: 50px;
 }
-
+/*
 button {
   font-family: "Inter", sans-serif;
   color: white;
@@ -61,14 +63,16 @@ button {
   padding: 15px;
   margin: 15px;
 }
+*/
 h1 {
   color: white;
   text-align: center;
   font-family: "Inter", sans-serif;
   font-size: smaller;
+  margin-top: 100px;
 }
 span {
-  color: #900080;
+  color: #bd008c;
   font-weight: bolder;
 }
 #question {
@@ -100,5 +104,5 @@ span {
 
 .option-btn:hover {
   cursor: pointer;
-  background-color: purple;
+  background-color: #bd008c;
 }

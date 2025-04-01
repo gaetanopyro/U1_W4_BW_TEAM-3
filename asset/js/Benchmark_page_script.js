@@ -202,3 +202,10 @@ function checkAnswer(selectedAnswer) {
   questionNumber++;
   loadQuestion();
 }
+
+const questionAnswer = document.getElementById("question");
+questionAnswer.style.fontSize = "40px";
+questionAnswer.style.marginBottom = "50px";
+questionAnswer.style.marginTop = "60px";
+questionAnswer.style.paddingLeft = "180px";
+questionAnswer.style.paddingRight = "180px";
