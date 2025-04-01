@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit&display=swap');
+
 *,
 *::before,
 *::after {
@@ -47,9 +50,39 @@ p{
 
 #main-container{
   text-align: center;
-  margin: 10%;
+  margin: 27%;
   color: aliceblue;
 }
+
+#img-container {
+  display: block;
+  cursor: pointer;
+  
+}
+
+#img-container img{
+  display: inline-block;
+  margin-right: 10px;
+width: 40px;
+height: auto;
+border-radius: 8px;
+}
+.stella {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+  filter: brightness(0) saturate(100%) invert(12%) sepia(7%) saturate(5610%) hue-rotate(193deg) brightness(96%) contrast(110%);
+}
+
+.stella:hover {
+  transform: scale(1.2);
+}
+
+.stella.selected {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(100%) saturate(1216%) hue-rotate(106deg) brightness(102%) contrast(103%);
+}
+
 #main-container .input-text input {
   display: inline-block;
   width: 450px;
