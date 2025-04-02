@@ -170,7 +170,12 @@ function loadQuestion() {
     //
     buttunss.createElement("a");
     btn2.classList.add("prova");
-    window.location.href = "QUIZ-App_Requirements.html";
+
+    btn2.onclick = () => {
+      localStorage.setItem(score);
+      localStorage.setItem(totalQuestions);
+      window.location.href = "Results-Page.html";
+    };
 
     return;
   }
@@ -209,3 +214,25 @@ questionAnswer.style.marginBottom = "50px";
 questionAnswer.style.marginTop = "60px";
 questionAnswer.style.paddingLeft = "180px";
 questionAnswer.style.paddingRight = "180px";
+
+document.getElementById("buttonss").addEventListener("click", function () {
+  window.location.href = "Results-Page.html";
+});
+
+// function createDonutChart(score, totalQuestions) {
+//   const correctPercentage = (score / totalQuestions) * 100;
+//   const wrongPercentage = 100 - correctPercentage;
+
+//   const correctSegment = document.getElementsByClassName("correct-segment");
+//   const wrongSegment = document.getElementsByClassName("wrong-segment");
+
+//   const correctDash = correctPercentage + " " + (100 - correctPercentage);
+//   correctSegment.setAttribute("stroke-dasharray", correctDash);
+//   correctSegment.setAttribute("stroke", "#c2128d");
+
+//   const wrongDash = wrongPercentage + " " + (100 - wrongPercentage);
+//   wrongSegment.setAttribute("stroke-dasharray", wrongDash);
+//   wrongSegment.setAttribute("stroke", "#00ffff");
+
+//   scoreText.textContent = Math.round(correctPercentage) + "% corrette";
+// }
