@@ -173,7 +173,12 @@ function loadQuestion() {
 
     buttunss.createElement("a");
     btn2.classList.add("prova");
-    window.location.href = "QUIZ-App_Requirements.html";
+
+    btn2.onclick = () => {
+      localStorage.setItem(score);
+      localStorage.setItem(totalQuestions);
+      window.location.href = "Results-Page.html";
+    };
 
     return;
   }
