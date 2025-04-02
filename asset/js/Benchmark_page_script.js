@@ -161,11 +161,11 @@ let timeLeft = 20;
 
 function loadQuestion() {
   if (questionNumber >= totalQuestions) {
-    clearInterval(timer); 
+    clearInterval(timer);
     document.getElementById("countdown").innerHTML = "";
     document.getElementById("question").innerHTML = "Quiz terminato!";
     document.getElementById("options").innerHTML = "";
-    document.getElementById("buttonss").innerHTML = ""; 
+    document.getElementById("buttonss").innerHTML = "";
     let btn2 = document.createElement("button");
     btn2.innerText = "Vai al risultato";
     btn2.onclick = endQuiz;
@@ -227,9 +227,12 @@ function resetTimer() {
   timer = setInterval(updateTimer, 1000);
 }
 
+document.getElementById("buttonss").addEventListener("click", function () {
+  window.location.href = "Results-Page.html";
+});
+
 function calculateScore() {
- 
-  score = 7; // 
+  score = 7; //
 }
 
 function calculatePercentages() {
@@ -262,14 +265,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const correctAnswers = localStorage.getItem("correctAnswers");
     const wrongAnswers = localStorage.getItem("wrongAnswers");
 
-   
     const correctSegment = document.getElementById("correctSegment");
     const wrongSegment = document.getElementById("wrongSegment");
 
     correctSegment.style.strokeDasharray = `${correctPercentage} ${100 - correctPercentage}`;
     wrongSegment.style.strokeDasharray = `${wrongPercentage} ${100 - wrongPercentage}`;
 
-   
     document.getElementById("percetualeCorrect").textContent = `${correctPercentage}%`;
     document.getElementById("correctTot").textContent = `${correctAnswers} Correct Answers`;
 
