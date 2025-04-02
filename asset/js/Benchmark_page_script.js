@@ -169,11 +169,9 @@ function loadQuestion() {
     btn2 = document.createElement("button");
     btn2.innerText = "Vai al risultato";
     buttonss.appendChild(btn2);
-    btn2.classList.add("");
 
     buttunss.createElement("a");
     btn2.classList.add("prova");
-    window.location.href = "QUIZ-App_Requirements.html";
 
     return;
   }
