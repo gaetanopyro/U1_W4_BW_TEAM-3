@@ -169,16 +169,10 @@ function loadQuestion() {
     btn2 = document.createElement("button");
     btn2.innerText = "Vai al risultato";
     buttonss.appendChild(btn2);
-    btn2.classList.add("");
 
     buttunss.createElement("a");
     btn2.classList.add("prova");
-
-    btn2.onclick = () => {
-      localStorage.setItem(score);
-      localStorage.setItem(totalQuestions);
-      window.location.href = "Results-Page.html";
-    };
+    window.location.href = "QUIZ-App_Requirements.html";
 
     return;
   }
@@ -235,6 +229,6 @@ function resetTimer() {
   timer = setInterval(updateTimer, 1000);
 }
 
-//document.getElementById("buttonss").addEventListener("click", function () {
-//window.location.href = "Result-Page.html";
-//});/*
+document.getElementById("buttonss").addEventListener("click", function () {
+  window.location.href = "Results-Page.html";
+});
