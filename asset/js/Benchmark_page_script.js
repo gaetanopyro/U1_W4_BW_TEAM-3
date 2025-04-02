@@ -156,8 +156,11 @@ const questionIndex = document.getElementById("p");
 let score = 0;
 let questionNumber = 0;
 const totalQuestions = questions.length;
+let timer;
+let timeLeft = 20;
 
 function loadQuestion() {
+  resetTimer();
   if (questionNumber >= totalQuestions) {
     document.getElementById("question").innerHTML = "Quiz terminato!";
     //  document.getElementById("results").innerHTML = "Punteggio: " + score;
@@ -167,7 +170,7 @@ function loadQuestion() {
     btn2.innerText = "Vai al risultato";
     buttonss.appendChild(btn2);
     btn2.classList.add("");
-    //
+
     buttunss.createElement("a");
     btn2.classList.add("prova");
     window.location.href = "QUIZ-App_Requirements.html";
@@ -209,3 +212,24 @@ questionAnswer.style.marginBottom = "50px";
 questionAnswer.style.marginTop = "60px";
 questionAnswer.style.paddingLeft = "180px";
 questionAnswer.style.paddingRight = "180px";
+
+function updateTimer() {
+  if (timeLeft <= 0) {
+    clearInterval(timer);
+    questionNumber++;
+    loadQuestion();
+  } else {
+    document.getElementById("countdown").innerText = timeLeft + "s";
+    timeLeft--;
+  }
+}
+
+function resetTimer() {
+  timeLeft = 20;
+  clearInterval(timer);
+  timer = setInterval(updateTimer, 1000);
+}
+
+//document.getElementById("buttonss").addEventListener("click", function () {
+//window.location.href = "Result-Page.html";
+//});/*
