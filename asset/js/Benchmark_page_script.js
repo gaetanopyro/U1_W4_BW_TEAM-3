@@ -209,3 +209,7 @@ questionAnswer.style.marginBottom = "50px";
 questionAnswer.style.marginTop = "60px";
 questionAnswer.style.paddingLeft = "180px";
 questionAnswer.style.paddingRight = "180px";
+
+//document.getElementById("buttonss").addEventListener("click", function () {
+//window.location.href = "Result-Page.html";
+//});/*
