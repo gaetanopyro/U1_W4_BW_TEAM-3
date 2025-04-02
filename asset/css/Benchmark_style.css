@@ -69,7 +69,11 @@ h1 {
   text-align: center;
   font-family: "Inter", sans-serif;
   font-size: smaller;
-  margin-top: 100px;
+}
+.numberQuestion {
+  margin-top: 120px;
+
+  display: block;
 }
 span {
   color: #bd008c;
