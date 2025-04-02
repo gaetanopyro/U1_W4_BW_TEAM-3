@@ -9,11 +9,10 @@
 
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
   background-image: url(../img/bg.jpg);
   background-size: cover;
   color: white;
-  font-family: outfit;
+  font-family: "Outfit", sans-serif;
 }
 
 main {
@@ -26,6 +25,10 @@ main section div {
   margin-top: 5rem;
 }
 
+.divCiambella {
+  align-items: center;
+}
+
 .logo {
   width: 250px;
   padding-left: 100px;
@@ -33,7 +36,8 @@ main section div {
 }
 
 button {
-  margin-top: 10rem;
+  margin-top: 20px;
+  margin-bottom: 100px;
   text-align: center;
   font-family: "Inter", sans-serif;
   background-color: transparent;
@@ -70,4 +74,8 @@ section h1 {
 
 p {
   font-size: 16px;
+}
+
+#ciambella {
+  /* Aggiungi eventuali stili specifici per #ciambella qui */
 }
