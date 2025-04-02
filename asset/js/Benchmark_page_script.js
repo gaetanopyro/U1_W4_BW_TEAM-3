@@ -160,28 +160,20 @@ let timer;
 let timeLeft = 20;
 
 function loadQuestion() {
-  resetTimer();
   if (questionNumber >= totalQuestions) {
+    clearInterval(timer);
+    document.getElementById("countdown").innerHTML = "";
     document.getElementById("question").innerHTML = "Quiz terminato!";
-    //  document.getElementById("results").innerHTML = "Punteggio: " + score;
     document.getElementById("options").innerHTML = "";
-    let btn2 = document.getElementById("buttonss");
-    btn2 = document.createElement("button");
+    document.getElementById("buttonss").innerHTML = "";
+    let btn2 = document.createElement("button");
     btn2.innerText = "Vai al risultato";
-    buttonss.appendChild(btn2);
-    btn2.classList.add("");
-
-    buttunss.createElement("a");
-    btn2.classList.add("prova");
-
-    btn2.onclick = () => {
-      localStorage.setItem(score);
-      localStorage.setItem(totalQuestions);
-      window.location.href = "Results-Page.html";
-    };
-
+    btn2.onclick = endQuiz;
+    document.getElementById("buttonss").appendChild(btn2);
     return;
   }
+
+  resetTimer();
 
   let q = questions[questionNumber];
 
@@ -239,6 +231,50 @@ document.getElementById("buttonss").addEventListener("click", function () {
   window.location.href = "Results-Page.html";
 });
 
-//document.getElementById("buttonss").addEventListener("click", function () {
-//window.location.href = "Result-Page.html";
-//});/*
+function calculateScore() {
+  score = 7; //
+}
+
+function calculatePercentages() {
+  const correctPercentage = (score / totalQuestions) * 100;
+  const wrongPercentage = 100 - correctPercentage;
+  localStorage.setItem("correctPercentage", correctPercentage.toFixed(2));
+  localStorage.setItem("wrongPercentage", wrongPercentage.toFixed(2));
+  localStorage.setItem("correctAnswers", score);
+  localStorage.setItem("wrongAnswers", totalQuestions - score);
+}
+
+function endQuiz() {
+  calculatePercentages();
+  window.location.href = "Results-Page.html";
+}
+
+document.getElementById("results-link").addEventListener("click", function (event) {
+  calculateScore();
+  this.href = `./graficoCiambella.html?score=${score}`;
+});
+
+document.getElementById("buttonss").addEventListener("click", function () {
+  window.location.href = "Results-Page.html";
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.pathname.includes("Results-Page.html")) {
+    const correctPercentage = localStorage.getItem("correctPercentage");
+    const wrongPercentage = localStorage.getItem("wrongPercentage");
+    const correctAnswers = localStorage.getItem("correctAnswers");
+    const wrongAnswers = localStorage.getItem("wrongAnswers");
+
+    const correctSegment = document.getElementById("correctSegment");
+    const wrongSegment = document.getElementById("wrongSegment");
+
+    correctSegment.style.strokeDasharray = `${correctPercentage} ${100 - correctPercentage}`;
+    wrongSegment.style.strokeDasharray = `${wrongPercentage} ${100 - wrongPercentage}`;
+
+    document.getElementById("percetualeCorrect").textContent = `${correctPercentage}%`;
+    document.getElementById("correctTot").textContent = `${correctAnswers} Correct Answers`;
+
+    document.getElementById("percentualeWrong").textContent = `${wrongPercentage}%`;
+    document.getElementById("wrongTot").textContent = `${wrongAnswers} Wrong Answers`;
+  }
+});

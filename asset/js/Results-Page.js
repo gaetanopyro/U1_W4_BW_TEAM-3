@@ -1,30 +1,28 @@
-window.onload = function () {
-  const punteggio = localStorage.getItem("score");
-  const totaleDomande = localStorage.getItem("totalQuestions");
+document.addEventListener("DOMContentLoaded", () => {
+  const correctPercentage = parseFloat(localStorage.getItem("correctPercentage")) || 0;
+  const wrongPercentage = parseFloat(localStorage.getItem("wrongPercentage")) || 0;
+  const correctAnswers = localStorage.getItem("correctAnswers") || "0";
+  const wrongAnswers = localStorage.getItem("wrongAnswers") || "0";
 
-  if (punteggio !== null && totaleDomande !== null) {
-    createDonutChart(parseInt(punteggio), parseInt(totaleDomande));
+  const radius = 15.91549430918954;
+  const circleCircumference = 2 * Math.PI * radius;
 
-    function createDonutChart(score, totalQuestions) {
-      const correctPercentage = (score / totalQuestions) * 100;
-      const wrongPercentage = 100 - correctPercentage;
+  const correctSegment = document.getElementById("correctSegment");
+  const wrongSegment = document.getElementById("wrongSegment");
 
-      const correctSegment = document.querySelector("correct-segment");
-      const wrongSegment = document.querySelector("wrong-segment");
 
-      const correctDash = correctPercentage + " " + (100 - correctPercentage);
-      correctSegment.setAttribute("stroke-dasharray", correctDash);
-      correctSegment.setAttribute("stroke", "#c2128d");
+  correctSegment.style.strokeDasharray = `${circleCircumference}`;
+  correctSegment.style.strokeDashoffset = `${circleCircumference * (1 - correctPercentage / 100)}`;
 
-      const wrongDash = wrongPercentage + " " + (100 - wrongPercentage);
-      wrongSegment.setAttribute("stroke-dasharray", wrongDash);
-      wrongSegment.setAttribute("stroke", "#00ffff");
-    }
-  }
-};
 
-// localStorage.removeItem("punteggio");
-//localStorage.removeItem("totaleDomande");
-// } else {
-// console.error("Dati del questionario non trovati.");
-//
+  wrongSegment.style.strokeDasharray = `${circleCircumference}`;
+  wrongSegment.style.strokeDashoffset = `${circleCircumference * (1 - (correctPercentage + wrongPercentage) / 100)}`;
+  wrongSegment.style.stroke = "#ff69b4";
+
+  
+  document.getElementById("percetualeCorrect").textContent = `${correctPercentage.toFixed(1)}%`;
+  document.getElementById("correctTot").textContent = `${correctAnswers} Correct Answers`;
+
+  document.getElementById("percentualeWrong").textContent = `${wrongPercentage.toFixed(1)}%`;
+  document.getElementById("wrongTot").textContent = `${wrongAnswers} Wrong Answers`;
+});
