@@ -230,6 +230,6 @@ function resetTimer() {
   timer = setInterval(updateTimer, 1000);
 }
 
-//document.getElementById("buttonss").addEventListener("click", function () {
-//window.location.href = "Result-Page.html";
-//});/*
+document.getElementById("buttonss").addEventListener("click", function () {
+  window.location.href = "Results-Page.html";
+});
