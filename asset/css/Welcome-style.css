@@ -89,7 +89,6 @@ input[type="checkbox"]:checked {
   -webkit-appearance: checkbox;
   -moz-appearance: checkbox;
   appearance: checkbox;
-  content: "X";
   cursor: pointer;
   border: 2px solid black;
   box-shadow: 0px 1px 43px #00ffff;
@@ -118,4 +117,8 @@ main form button {
   font-weight: bold;
   font-size: 16px;
   box-shadow: 0px 1px 43px #00ffff;
+}
+main form button:hover {
+  cursor: pointer;
+  box-shadow: 0px 1px 43px #730051;
 }
