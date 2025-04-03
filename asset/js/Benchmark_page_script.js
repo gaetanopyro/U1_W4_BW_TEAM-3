@@ -130,28 +130,6 @@ window.onload = function () {
 // Se stai mostrando una domanda alla volta, aggiungi semplicemente un punto alla variabile del punteggio che hai precedentemente creato SE la risposta selezionata è === correct_answer
 
 // BUON LAVORO 💪🚀
-/*
-const score = 0; //
-
-const questionIndex = document.getElementById("p");
-
-const index = function () {
-  if (questionNumber < questions.length) {
-    const currentQuestion = questions[questionNumber];
-    const userAnswer = prompt("Domanda " + (questionNumber + 1) + ": " + currentQuestion.question);
-    console.log(currentQuestion);
-  }
-};
-/*
-const score = 0;
-const index = (array) => {
-  return array.map((element) => element.question);
-};
-
-const questionIndex = document.getElementById("p");
-
-
-*/
 
 let score = 0;
 let questionNumber = 0;
@@ -176,8 +154,8 @@ function loadQuestion() {
   resetTimer();
 
   let q = questions[questionNumber];
-
-  document.getElementById("question-header").innerHTML = "QUESTION " + (questionNumber + 1) + " <span>/" + totalQuestions + "</span>";
+  // document.getElementById("question-header").innerHTML = "QUESTION " + (questionNumber + 1) + " <span>/" + totalQuestions + "</span>";
+  document.getElementById("question-header").innerHTML = `QUESTION ${questionNumber + 1}<span>/${totalQuestions}</span>`;
 
   document.getElementById("question").innerHTML = q.question;
 
@@ -216,7 +194,10 @@ function updateTimer() {
     questionNumber++;
     loadQuestion();
   } else {
-    document.getElementById("countdown").innerText = timeLeft + "s";
+    const containerCountdown = document.getElementById("countdown");
+    if (containerCountdown) {
+      containerCountdown.innerText = timeLeft + "s";
+    }
     timeLeft--;
   }
 }
@@ -231,15 +212,11 @@ document.getElementById("buttonss").addEventListener("click", function () {
   window.location.href = "Results-Page.html";
 });
 
-function calculateScore() {
-  score = 7; //
-}
-
 function calculatePercentages() {
   const correctPercentage = (score / totalQuestions) * 100;
   const wrongPercentage = 100 - correctPercentage;
-  localStorage.setItem("correctPercentage", correctPercentage.toFixed(2));
-  localStorage.setItem("wrongPercentage", wrongPercentage.toFixed(2));
+  localStorage.setItem("correctPercentage", correctPercentage);
+  localStorage.setItem("wrongPercentage", wrongPercentage);
   localStorage.setItem("correctAnswers", score);
   localStorage.setItem("wrongAnswers", totalQuestions - score);
 }
@@ -249,32 +226,6 @@ function endQuiz() {
   window.location.href = "Results-Page.html";
 }
 
-document.getElementById("results-link").addEventListener("click", function (event) {
-  calculateScore();
-  this.href = `./graficoCiambella.html?score=${score}`;
-});
-
 document.getElementById("buttonss").addEventListener("click", function () {
   window.location.href = "Results-Page.html";
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (window.location.pathname.includes("Results-Page.html")) {
-    const correctPercentage = localStorage.getItem("correctPercentage");
-    const wrongPercentage = localStorage.getItem("wrongPercentage");
-    const correctAnswers = localStorage.getItem("correctAnswers");
-    const wrongAnswers = localStorage.getItem("wrongAnswers");
-
-    const correctSegment = document.getElementById("correctSegment");
-    const wrongSegment = document.getElementById("wrongSegment");
-
-    correctSegment.style.strokeDasharray = `${correctPercentage} ${100 - correctPercentage}`;
-    wrongSegment.style.strokeDasharray = `${wrongPercentage} ${100 - wrongPercentage}`;
-
-    document.getElementById("percetualeCorrect").textContent = `${correctPercentage}%`;
-    document.getElementById("correctTot").textContent = `${correctAnswers} Correct Answers`;
-
-    document.getElementById("percentualeWrong").textContent = `${wrongPercentage}%`;
-    document.getElementById("wrongTot").textContent = `${wrongAnswers} Wrong Answers`;
-  }
 });
