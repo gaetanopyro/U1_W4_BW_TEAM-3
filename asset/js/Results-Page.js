@@ -21,5 +21,25 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("correctTot").textContent = `${correctAnswers}/${totalQuestions} Answers`;
 
   document.getElementById("percentualeWrong").textContent = `${wrongPercentage.toFixed(1)}%`;
-  document.getElementById("wrongTot").textContent = `${wrongAnswers}/${totalQuestions} Answers`;
+  document.getElementById("wrongTot").textContent = `${wrongAnswers} Wrong Answers`;
+  displayResult(correctPercentage);
 });
+
+
+
+function displayResult(score) {
+  const textElement = document.getElementById('circleText');
+
+  if (textElement) { 
+    if (score >= 50) {
+      textElement.textContent = 'You passed the exam!';
+      textElement.style.color = 'white';
+
+    } else {
+      textElement.textContent = 'Unsuccessful Test';
+      textElement.style.color = 'white';
+    }
+  } else {
+    console.error('Element with id "circleText" not found.');
+  }
+}
