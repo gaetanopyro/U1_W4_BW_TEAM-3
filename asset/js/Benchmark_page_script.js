@@ -129,6 +129,18 @@ function loadQuestion() {
 }
 
 function checkAnswer(selectedAnswer) {
+  let correctAnswer = questions[questionNumber].correct_answer;
+  let options = document.querySelectorAll(".option-btn");
+
+  options.forEach((btn) => {
+    btn.disabled = true;
+    if (btn.innerText === correctAnswer) {
+      btn.style.backgroundColor = "green";
+    } else if (btn.innerText === selectedAnswer) {
+      btn.style.backgroundColor = "red";
+    }
+  });
+
   if (selectedAnswer === questions[questionNumber].correct_answer) {
     score++;
   }
@@ -136,9 +148,9 @@ function checkAnswer(selectedAnswer) {
   questionNumber++;
 
   if (questionNumber >= totalQuestions) {
-    endQuiz();
+    setTimeout(endQuiz, 1000);
   } else {
-    loadQuestion();
+    setTimeout(loadQuestion, 1000);
   }
 }
 
