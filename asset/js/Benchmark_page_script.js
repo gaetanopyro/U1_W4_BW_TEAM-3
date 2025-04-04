@@ -156,8 +156,12 @@ function startTimer() {
 
     if (i >= timeLeft) {
       clearInterval(timer);
-      questionNumber++;
-      loadQuestion();
+      if (questionNumber >= totalQuestions - 1) {
+        endQuiz();
+      } else {
+        questionNumber++;
+        loadQuestion();
+      }
     }
   }, 1000);
 }
@@ -165,7 +169,7 @@ function startTimer() {
 function resetTimer() {
   clearInterval(timer);
   timeLeft = 20;
-  document.querySelector(".countdown-text").textContent = timeLeft;
+  document.querySelector(".countdown-text").innerText = timeLeft;
   document.querySelector(".anello-sopra").style.strokeDashoffset = 283;
 }
 
