@@ -9,6 +9,7 @@
 
 body {
   margin: 0;
+  width: 100%;
   background-image: url(../img/bg.jpg);
   background-size: cover;
   color: white;
@@ -94,6 +95,12 @@ svg {
 }
 
 
-text {
-  font size:
+#circleText {
+  font-size: 3px;
+  fill: white;
+}
+
+#spanText {
+  font-size: 2px;
+  fill: #10E3E9; 
 }

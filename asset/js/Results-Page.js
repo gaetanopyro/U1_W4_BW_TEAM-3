@@ -26,18 +26,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 function displayResult(score) {
   const textElement = document.getElementById('circleText');
+  const spanTextElement = document.getElementById('spanText');
 
-  if (textElement) { 
+  if (textElement) {
     if (score >= 50) {
-      textElement.textContent = 'You passed the exam!';
-      textElement.style.color = 'white';
+      textElement.textContent = 'Congratulations!';
+
+      if (spanTextElement) {
+        spanTextElement.style.display = 'inline'; 
+        spanTextElement.textContent = 'You passed the exam.';
+      }
 
     } else {
       textElement.textContent = 'Unsuccessful Test';
-      textElement.style.color = 'white';
+
+      if (spanTextElement) {
+        spanTextElement.style.display = 'none'; 
+      }
     }
   } else {
     console.error('Element with id "circleText" not found.');
