@@ -66,7 +66,7 @@ p {
   height: 40px;
   cursor: pointer;
   transition: transform 0.2s, filter 0.2s;
-  filter: brightness(0) saturate(100%) invert(12%) sepia(7%) saturate(5610%) hue-rotate(193deg) brightness(96%) contrast(110%);
+  filter: brightness(0.25%) saturate(100%) invert(12%) sepia(7%) saturate(5610%) hue-rotate(193deg) brightness(96%) contrast(110%);
 }
 
 .stella:hover {
