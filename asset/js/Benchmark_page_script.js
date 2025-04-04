@@ -107,8 +107,6 @@ function loadQuestion() {
     document.getElementById("buttonss").appendChild(btn2);
     return;
   }
-
-  resetTimer();
   startTimer();
 
   let q = questions[questionNumber];
@@ -164,13 +162,6 @@ function startTimer() {
       }
     }
   }, 1000);
-}
-
-function resetTimer() {
-  clearInterval(timer);
-  timeLeft = 20;
-  document.querySelector(".countdown-text").innerText = timeLeft;
-  document.querySelector(".anello-sopra").style.strokeDashoffset = 283;
 }
 
 function calculatePercentages() {
