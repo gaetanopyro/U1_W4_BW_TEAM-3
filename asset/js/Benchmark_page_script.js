@@ -81,14 +81,10 @@ const questions = [
   },
 ];
 
-window.onload = function () {
-  loadQuestion();
-};
-
 let score = 0;
 let questionNumber = 0;
 const totalQuestions = questions.length;
-let timer; // Timer globale
+let timer;
 let timeLeft = 20;
 
 window.onload = function () {
@@ -97,35 +93,33 @@ window.onload = function () {
 
 function loadQuestion() {
   if (questionNumber >= totalQuestions) {
-    // Quando tutte le domande sono state completate
-    clearInterval(timer); // Ferma il timer
-    document.getElementById("countdown").innerHTML = ""; // Pulisce il countdown
-    document.getElementById("question").innerHTML = "Quiz terminato!"; // Messaggio finale
-    document.getElementById("options").innerHTML = ""; // Rimuove le opzioni
-    document.getElementById("buttonss").innerHTML = ""; // Pulisce i bottoni precedenti
+    clearInterval(timer);
+    document.getElementById("countdown").innerHTML = "";
+    document.getElementById("question").innerHTML = "Quiz terminato!";
+    document.getElementById("options").innerHTML = "";
+    document.getElementById("buttonss").innerHTML = "";
 
-    // Crea il pulsante per visualizzare i risultati
     let btn2 = document.createElement("button");
     btn2.innerText = "Vai al risultato";
-    btn2.onclick = endQuiz;
-    document.getElementById("buttonss").appendChild(btn2); // Aggiungi il pulsante alla pagina
-    return; // Esci dalla funzione, impedendo il caricamento di altre domande
+    btn2.onclick = () => {
+      endQuiz();
+    };
+    document.getElementById("buttonss").appendChild(btn2);
+    return;
   }
 
-  // Reset del timer prima di caricare una nuova domanda
   resetTimer();
   startTimer();
 
   let q = questions[questionNumber];
 
-  // Aggiorna l'intestazione della domanda
   document.getElementById("question-header").innerHTML = `QUESTION ${questionNumber + 1}<span>/${totalQuestions}</span>`;
   document.getElementById("question").innerHTML = q.question;
 
   // Mescola le risposte
   let answers = [...q.incorrect_answers, q.correct_answer];
   let optionsContainer = document.getElementById("options");
-  optionsContainer.innerHTML = ""; // Pulisce le risposte precedenti
+  optionsContainer.innerHTML = "";
 
   // Crea i bottoni per le risposte
   answers.forEach((answer) => {
@@ -139,41 +133,42 @@ function loadQuestion() {
 
 function checkAnswer(selectedAnswer) {
   if (selectedAnswer === questions[questionNumber].correct_answer) {
-    score++; // Incrementa il punteggio se la risposta è corretta
+    score++;
   }
-  questionNumber++; // Passa alla prossima domanda
 
-  loadQuestion(); // Carica la prossima domanda
+  questionNumber++;
+
+  if (questionNumber >= totalQuestions) {
+    endQuiz();
+  } else {
+    loadQuestion();
+  }
 }
 
 function startTimer() {
   let i = 0;
   let fullCircle = 283;
 
-  // Avvia il timer
   timer = setInterval(function () {
-    i++; // Incrementa ogni secondo
+    i++;
 
-    // Aggiorna il tempo rimanente sullo schermo
     document.querySelector(".countdown-text").textContent = timeLeft - i;
 
-    // Aggiorna la grafica del timer (cerchio)
     document.querySelector(".anello-sopra").style.strokeDashoffset = fullCircle - i * (fullCircle / timeLeft);
 
-    // Quando il tempo è scaduto, passa alla domanda successiva
     if (i >= timeLeft) {
-      clearInterval(timer); // Ferma il timer
-      questionNumber++; // Passa alla prossima domanda
-      loadQuestion(); // Carica la prossima domanda
+      clearInterval(timer);
+      questionNumber++;
+      loadQuestion();
     }
-  }, 1000); // Ogni secondo
+  }, 1000);
 }
 
 function resetTimer() {
-  clearInterval(timer); // Ferma qualsiasi timer in corso
-  timeLeft = 20; // Imposta il tempo rimanente a 20 secondi
-  document.querySelector(".countdown-text").textContent = timeLeft; // Aggiorna il display del tempo
-  document.querySelector(".anello-sopra").style.strokeDashoffset = 283; // Ripristina la grafica del cerchio
+  clearInterval(timer);
+  timeLeft = 20;
+  document.querySelector(".countdown-text").textContent = timeLeft;
+  document.querySelector(".anello-sopra").style.strokeDashoffset = 283;
 }
 
 function calculatePercentages() {
@@ -186,6 +181,7 @@ function calculatePercentages() {
 }
 
 function endQuiz() {
-  calculatePercentages(); // Calcola le percentuali e memorizza i risultati
-  window.location.href = "Results-Page.html"; // Reindirizza alla pagina dei risultati
+  calculatePercentages();
+  console.log("Quiz completato. Reindirizzamento alla pagina dei risultati...");
+  window.location.href = "Results-Page.html";
 }
