@@ -18,28 +18,26 @@ document.addEventListener("DOMContentLoaded", () => {
   wrongSegment.style.stroke = "#ff69b4";
 
   document.getElementById("percetualeCorrect").textContent = `${correctPercentage.toFixed(1)}%`;
-  document.getElementById("correctTot").textContent = `${correctAnswers}/${totalQuestions} Answers`;
+  document.getElementById("correctTot").textContent = `${correctAnswers}/${totalQuestions} Questions`;
 
   document.getElementById("percentualeWrong").textContent = `${wrongPercentage.toFixed(1)}%`;
-  document.getElementById("wrongTot").textContent = `${wrongAnswers} Wrong Answers`;
+  document.getElementById("wrongTot").textContent = `${wrongAnswers}/${totalQuestions} Questions`;
   displayResult(correctPercentage);
 });
 
-
-
 function displayResult(score) {
-  const textElement = document.getElementById('circleText');
+  const textElement = document.getElementById("circleText");
+  const spanTextElement = document.getElementById("spanText");
 
-  if (textElement) { 
-    if (score >= 50) {
-      textElement.textContent = 'You passed the exam!';
-      textElement.style.color = 'white';
-
-    } else {
-      textElement.textContent = 'Unsuccessful Test';
-      textElement.style.color = 'white';
-    }
+  if (score >= 60) {
+    textElement.textContent = "Congratulations!";
+    spanTextElement.style.display = "inline";
+    spanTextElement.textContent = "You passed the exam.";
+    spanTextElement.style.color = "#10E3E9";
   } else {
-    console.error('Element with id "circleText" not found.');
+    textElement.textContent = "Unsuccessful Test";
+    spanTextElement.style.display = "inline";
+    spanTextElement.textContent = "Oh no, try again!";
+    spanTextElement.style.color = "red";
   }
 }

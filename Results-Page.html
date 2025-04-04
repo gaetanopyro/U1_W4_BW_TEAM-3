@@ -12,7 +12,7 @@
       <img class="logo" src="./asset/img/epicode_logo.png" alt="Logo Epicode" />
     </header>
     <main>
-      <div id="title-results">
+      <div>
         <h1>Results</h1>
         <h4>The summary of your answers:</h4>
       </div>
@@ -36,13 +36,16 @@
               stroke="#00ffff"
               stroke-width="5"
             ></circle>
-            <text id="circleText" x="21" y="21" text-anchor="middle" dominant-baseline="middle" font-size="3" fill="currentColor"></text>
+
+            <text id="circleText" x="21" y="18" text-anchor="middle" dominant-baseline="middle" font-size="3" fill="white">You passed</text>
+
+            <text id="spanText" x="21" y="24" text-anchor="middle" dominant-baseline="middle" font-size="2" fill="currentColor"></text>
           </svg>
         </div>
         <div class="divCiambella">
           <h1>Wrong</h1>
           <h1 id="percentualeWrong">0%</h1>
-          <p id="wrongTot">0 Wrong Answers</p>
+          <p id="wrongTot">0 Wrong Questions</p>
         </div>
       </section>
     </main>
