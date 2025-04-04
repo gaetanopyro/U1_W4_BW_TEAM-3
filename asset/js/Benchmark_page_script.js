@@ -113,15 +113,13 @@ function loadQuestion() {
 
   let q = questions[questionNumber];
 
-  document.getElementById("question-header").innerHTML = `QUESTION ${questionNumber + 1}<span>/${totalQuestions}</span>`;
+  document.getElementById("question-header").innerHTML = `QUESTION ${questionNumber + 1}<span>/${totalQuestions}</span>`; // Question 1/10
   document.getElementById("question").innerHTML = q.question;
 
-  // Mescola le risposte
   let answers = [...q.incorrect_answers, q.correct_answer];
   let optionsContainer = document.getElementById("options");
   optionsContainer.innerHTML = "";
 
-  // Crea i bottoni per le risposte
   answers.forEach((answer) => {
     let btn = document.createElement("button");
     btn.innerText = answer;
@@ -147,7 +145,7 @@ function checkAnswer(selectedAnswer) {
 
 function startTimer() {
   let i = 0;
-  let fullCircle = 283;
+  let fullCircle = 265;
 
   timer = setInterval(function () {
     i++;
@@ -185,3 +183,11 @@ function endQuiz() {
   console.log("Quiz completato. Reindirizzamento alla pagina dei risultati...");
   window.location.href = "Results-Page.html";
 }
+
+//style
+const questionAnswer = document.getElementById("question");
+questionAnswer.style.fontSize = "40px";
+questionAnswer.style.marginBottom = "50px";
+questionAnswer.style.marginTop = "60px";
+questionAnswer.style.paddingLeft = "180px";
+questionAnswer.style.paddingRight = "180px";

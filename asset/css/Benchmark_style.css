@@ -131,15 +131,15 @@ svg {
 }
 
 .anello-sotto {
-  stroke-dasharray: 283;
+  stroke-dasharray: 265;
   stroke-dashoffset: 0;
   stroke: rgba(255, 253, 254, 0.211);
   border-color: transparent;
 }
 
 .anello-sopra {
-  stroke-dasharray: 283;
-  stroke-dashoffset: 283;
+  stroke-dasharray: 265;
+  stroke-dashoffset: 265;
   stroke: #6cf;
   transition: stroke-dashoffset 1s linear;
 }
