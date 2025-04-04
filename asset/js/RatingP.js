@@ -1,20 +1,24 @@
-const stars = document.querySelectorAll('.stella');
-const ratingValue = document.getElementById('rating-value');
-
+const stars = document.querySelectorAll(".stella");
+const ratingValue = document.getElementById("rating-value");
+const button = document.getElementById("button");
 
 stars.forEach((star, index) => {
-  star.addEventListener('click', () => {
-    const isSelected = star.classList.contains('selected');
+  star.addEventListener("click", () => {
+    const isSelected = star.classList.contains("selected");
 
     if (isSelected) {
-      stars.forEach(s => s.classList.remove('selected'));
-      ratingValue.textContent = 0; 
+      stars.forEach((s) => s.classList.remove("selected"));
+      ratingValue.textContent = 0;
     } else {
-      stars.forEach(s => s.classList.remove('selected'));
+      stars.forEach((s) => s.classList.remove("selected"));
       for (let i = 0; i <= index; i++) {
-        stars[i].classList.add('selected');
+        stars[i].classList.add("selected");
       }
       ratingValue.textContent = index + 1;
     }
   });
+});
+
+button.addEventListener("click", () => {
+  alert(`VOTE SENT!`);
 });
