@@ -116,6 +116,8 @@ function loadQuestion() {
   document.getElementById("question").innerHTML = q.question;
 
   let answers = [...q.incorrect_answers, q.correct_answer];
+  answers.sort();
+
   let optionsContainer = document.getElementById("options");
   optionsContainer.innerHTML = "";
 
